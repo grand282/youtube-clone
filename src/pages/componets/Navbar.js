@@ -49,7 +49,7 @@ function Navbar() {
 </div>
 
 {/* Search bar */}
-<div className='flex-grow ml-4'>
+<div className='flex-grow ml-8'>
   <div className='relative'>
     <form onSubmit={handleSubmit}>
     <input
@@ -61,7 +61,7 @@ function Navbar() {
       onKeyPress={handleKeyPress}
     />
     <button
-      className='absolute right-0 top-0 mt-3 mr-10'
+      className='absolute ml-20 right-0 top-0 mt-3'
       type='button'
       onClick={handleSubmit}
     >
@@ -72,7 +72,7 @@ function Navbar() {
 </div>
 
 {/* Right-side icons */}
-<div className='flex items-center'>
+<div className='flex ml-2 items-center'>
   <button className='mr-4'>
     <Image width={25} height={25} src={video} alt='video camera' />
   </button>
@@ -86,7 +86,6 @@ function Navbar() {
 
 </div>
 
-    <Sidebar/>
     </>
   )
 }

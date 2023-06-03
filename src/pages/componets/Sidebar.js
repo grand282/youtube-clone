@@ -16,18 +16,21 @@ import learning from '../../../public/icons/school.png';
 import styler from '../../../public/icons/styler.png';
 import settings from '../../../public/icons/settings.png';
 import child from '../../../public/icons/child_care.png';
+import Link from 'next/link';
 
 const Sidebar = () => {
   return (
     <div className="h-screen fixed top-12 left-0 z-50 overflow-y-auto overflow-visible bg-white shadow-md w-40 hidden sm:block md:block">
       <div class="divide-y divide-solid flex flex-col w-full">
         <div className='w-full mt-5'>
+            <Link href='/'>
             <p className='flex mt-4'>
                 <span className='ml-4'><Image src={home} width={20} height={20} alt="home" /></span>
             <span className='ml-4'>
                 Home
             </span>
             </p>
+            </Link>
             <p className='flex mt-4'>
                 <span className='ml-4'><Image src={video} width={20} height={20} alt="shorts" /></span>
             <span className='ml-4'>

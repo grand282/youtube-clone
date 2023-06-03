@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Navbar from './componets/Navbar';
+import Sidebar from './componets/Sidebar';
 
 
 const SearchResults = () => {
@@ -21,25 +22,48 @@ const SearchResults = () => {
       <>
       <div className='mb-20'>
       <Navbar/>
+      <Sidebar/>
       </div>
       <div className='ml-60 mr-10'>
       <div className='mt-2 grid grid-cols-3 gap-4 gap-x-8'>
-      {videos.map((result) => (
-            <div key={result.id.videoId}>
-              <motion.div whileHover={{ scale: 1.1 }}>
-                <Image
-                  className='rounded-lg '
-                  src={result.snippet.thumbnails.medium.url}
-                  width={350}
-                  height={250}
-                  alt={result.snippet.title}
-                />
-                <h2 className='capitalize break-normal'>
-                  {result.snippet.title}
-                </h2>
-              </motion.div>
+      {videos.map((video) => {
+          // Calculate the time difference in months or years
+          const publishedAt = new Date(video.snippet.publishedAt);
+          const currentDate = new Date();
+          const diffInMonths = currentDate.getMonth() - publishedAt.getMonth();
+          const diffInYears = currentDate.getFullYear() - publishedAt.getFullYear();
+
+          // Format the published date based on the time difference
+          let publishedDate = '';
+          if (diffInYears > 0) {
+            publishedDate = `${diffInYears} year${diffInYears > 1 ? 's' : ''} ago`;
+          } else if (diffInMonths > 0) {
+            publishedDate = `${diffInMonths} month${diffInMonths > 1 ? 's' : ''} ago`;
+          } else {
+            publishedDate = 'Recently published';
+          }
+
+          return (
+            <div key={video.id.videoId}>
+              
+                <motion.div whileHover={{ scale: 1.1 }}>
+                  <Image
+                    className='rounded-lg '
+                    src={video.snippet.thumbnails.medium.url}
+                    width={350}
+                    height={250}
+                    alt={video.snippet.title}
+                  />
+                  <h2 className='capitalize break-normal mb-2 text-black decoration-4'>{video.snippet.title}</h2>
+                  <p>
+                    From <span className='text-red-700 mr-3'>{video.snippet.channelTitle}</span> 
+                    At <span className='text-blue-700 ml-3'>{publishedDate}</span>
+                  </p>
+                </motion.div>
+              
             </div>
-          ))}
+          );
+        })}
     </div>
   </div>
   </>
