@@ -1,13 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
-import youtubeIcon from '../../../public/icons/youtube.png'
-import menu from '../../../public/icons/menu.png'
+import youtubeIcon from '../public/icons/youtube.png'
+import menu from '../public/icons/menu.png'
 import Link from 'next/link'
-import search from '../../../public/icons/search.png'
-import video from '../../../public/icons/video-camera.png'
-import notification from '../../../public/icons/bell.png'
-import user from '../../../public/icons/user.png'
-import Sidebar from './Sidebar'
+import search from '../public/icons/search.png'
+import video from '../public/icons/video-camera.png'
+import notification from '../public/icons/bell.png'
+import user from '../public/icons/user.png'
 import { useState} from 'react'
 import { useRouter } from 'next/router';
 
@@ -79,7 +78,7 @@ function Navbar() {
   <button className='mr-4'>
     <Image width={25} height={25} src={notification} alt='notification' />
   </button>
-  <button>
+  <button onClick={()=> router.push('/account')}>
     <Image width={25} height={25} src={user} alt='user' />
   </button>
 </div>
