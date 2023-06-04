@@ -10,6 +10,6 @@ export default NextAuth({
     
     // You can add more authentication providers heres
   ],
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.JWT_SECRET,
   
 });

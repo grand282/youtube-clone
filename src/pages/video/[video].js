@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import Navbar from '../../../componets/Navbar';
+import Navbar from '../componets/Navbar';
 import Image from 'next/image';
 
 const Video = () => {
@@ -70,8 +70,8 @@ const Video = () => {
             <div key={item.id.videoId}>
               <button onClick={()=>{
                 router.push({
-                  pathname: '/video/[video]',
-                  query: { video: item.id.videoId}
+                  pathname: '/video/[item]',
+                  query: { video: video.id}
                 })
               }}>
                 <motion.div whileHover={{ scale: 1.1 }}>

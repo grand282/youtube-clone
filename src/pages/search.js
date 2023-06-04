@@ -2,8 +2,8 @@ import React, {useState,useEffect} from 'react'
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import Navbar from '../../componets/Navbar';
-
+import Navbar from './componets/Navbar';
+import Sidebar from './componets/Sidebar';
 
 
 const SearchResults = () => {
@@ -22,12 +22,10 @@ const SearchResults = () => {
       <>
       <div className='mb-20'>
       <Navbar/>
+      <Sidebar/>
       </div>
-      <div className='ml-20 mr-10'>
-      <p className='mb-10'>Returned search results for: <span className='text-red-600'>{query}</span></p>
-
-      <div className='mt-2 grid md:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-1 gap-4 gap-x-8'>
-
+      <div className='ml-60 mr-10'>
+      <div className='mt-2 grid grid-cols-3 gap-4 gap-x-8'>
       {videos.map((video) => {
           // Calculate the time difference in months or years
           const publishedAt = new Date(video.snippet.publishedAt);
@@ -47,15 +45,10 @@ const SearchResults = () => {
 
           return (
             <div key={video.id.videoId}>
-              <button onClick={()=>{
-                router.push({
-                  pathname: '/video/[video]',
-                  query: { video: video.id.videoId}
-                })
-              }}>
+              
                 <motion.div whileHover={{ scale: 1.1 }}>
                   <Image
-                    className='rounded-lg max-sm: w-screen'
+                    className='rounded-lg '
                     src={video.snippet.thumbnails.medium.url}
                     width={350}
                     height={250}
@@ -67,7 +60,7 @@ const SearchResults = () => {
                     At <span className='text-blue-700 ml-3'>{publishedDate}</span>
                   </p>
                 </motion.div>
-              </button>
+              
             </div>
           );
         })}
