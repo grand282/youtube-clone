@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSession, signOut } from 'next-auth/react'
 
-const account = () => {
+const Account = () => {
     const {data: session} = useSession()
 
     console.log({session})
@@ -23,4 +23,4 @@ const account = () => {
   )
 }
 
-export default account
+export default Account
