@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import Navbar from '../../componets/Navbar';
+import Navbar from '../../youtube-clone/src/componets/Navbar';
 
 
 

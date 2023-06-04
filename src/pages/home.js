@@ -1,9 +1,8 @@
 import React from 'react'
-import Image from 'next/image';
 import Head from 'next/head';
-import Card from '../../componets/Card';
-import Navbar from '../../componets/Navbar';
-import Sidebar from '../../componets/Sidebar';
+import Card from '../../youtube-clone/src/componets/Card';
+import Navbar from '../../youtube-clone/src/componets/Navbar';
+import Sidebar from '../../youtube-clone/src/componets/Sidebar';
 
 const Home = () => {
   return (
