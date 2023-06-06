@@ -16,7 +16,7 @@ const SearchResults = () => {
       fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=${apiKey}`)
         .then((res) => res.json())
         .then((data) => setVideos(data.items));
-  }, [query]);
+  }, [query,apiKey]);
   console.log({videos})
     return (
       <>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSession, signOut } from 'next-auth/react'
+import Image from 'next/image'
 
 const Account = () => {
     const {data: session} = useSession()
@@ -9,7 +10,7 @@ const Account = () => {
       <h1 className="text-3xl font-bold mb-6">Account Details</h1>
       <div className="border border-gray-300 rounded-lg p-6 max-w-md w-full">
         <h1 className="text-2xl font-bold mb-4">YouTube</h1>
-        <img src={session.user.image} alt={session.user.name} width={100} height={100} />
+        <Image src={session.user.image} alt={session.user.name} width={100} height={100} />
         <h2 className="text-lg mb-4">You are now login as: <span>{session.user.name}</span> </h2>
         <h2 className="text-lg mb-4">At: <span>{session.user.email}</span> </h2>
 

@@ -21,7 +21,7 @@ const Video = () => {
         setData(data);
         setLoading(false);
       });
-  }, []);
+  }, [video,apiKey]);
  
   if (isLoading) return <p className='text-red-600 text-center text-2xl font-medium mt-40'>Loading...</p>;
   if (!data) return <p>No profile data</p>;
@@ -39,7 +39,7 @@ const Video = () => {
           frameBorder="0"
         ></iframe>
         {data.items ? data.items.map((item) =>(
-          <div>
+          <div key={item.id.videoId}>
             <h1 className='text-red-600'>{item.snippet.title}</h1>
             <h2 className='text-red-400'>{item.snippet.channelTitle}</h2>
             <p className='break-all'>{item.snippet.description}</p>
