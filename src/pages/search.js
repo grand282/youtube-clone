@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import Navbar from '../../youtube-clone/src/componets/Navbar';
+import Navbar from './componets/Navbar';
 
 
 
@@ -28,7 +28,7 @@ const SearchResults = () => {
 
       <div className='mt-2 grid md:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-1 gap-4 gap-x-8'>
 
-      {videos.map((video) => {
+      {videos && videos.map((video) => {
           // Calculate the time difference in months or years
           const publishedAt = new Date(video.snippet.publishedAt);
           const currentDate = new Date();

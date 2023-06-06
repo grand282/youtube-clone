@@ -45,7 +45,7 @@ const Card = () => {
           }
 
           return (
-            <div key={video.id.videoId}>
+            <div key={video.id}>
               <button onClick={()=>{
                 router.push({
                   pathname: '/video/[video]',

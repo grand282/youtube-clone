@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import Navbar from '../../../youtube-clone/src/componets/Navbar';
+import Navbar from '../componets/Navbar';
 import Image from 'next/image';
 
 const Video = () => {
@@ -21,7 +21,7 @@ const Video = () => {
         setData(data);
         setLoading(false);
       });
-  }, [video,data]);
+  }, []);
  
   if (isLoading) return <p className='text-red-600 text-center text-2xl font-medium mt-40'>Loading...</p>;
   if (!data) return <p>No profile data</p>;

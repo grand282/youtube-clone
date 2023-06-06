@@ -1,17 +1,17 @@
 import Image from 'next/image'
 import React from 'react'
-import youtubeIcon from '../public/icons/youtube.png'
-import menu from '../public/icons/menu.png'
+import youtubeIcon from '../../../public/icons/youtube.png'
+import menu from '../../../public/icons/menu.png'
 import Link from 'next/link'
-import search from '../public/icons/search.png'
-import video from '../public/icons/video-camera.png'
-import notification from '../public/icons/bell.png'
-import user from '../public/icons/user.png'
+import search from '../../../public/icons/search.png'
+import video from '../../../public/icons/video-camera.png'
+import notification from '../../../public/icons/bell.png'
+import user from '../../../public/icons/user.png'
 import { useState} from 'react'
 import { useRouter } from 'next/router';
 
 
-function Navbar() {
+const Navbar = () => {
   const [query, setQuery] = useState('');
   const router = useRouter();
   const handleSubmit = (e) => {
@@ -31,7 +31,6 @@ function Navbar() {
     }
   };
   return (
-    <>
     <div className='flex flex-row justify-between items-center px-8 max-h-0.8 bg-white border-b border-gray-300 fixed top-0 w-full z-50'>
 
 {/* Logo */}
@@ -84,8 +83,6 @@ function Navbar() {
 </div>
 
 </div>
-
-    </>
   )
 }
 

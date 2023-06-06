@@ -1,10 +1,10 @@
 import React from 'react'
-import Head from 'next/head';
-import Card from '../../youtube-clone/src/componets/Card';
-import Navbar from '../../youtube-clone/src/componets/Navbar';
-import Sidebar from '../../youtube-clone/src/componets/Sidebar';
+import Head from 'next/head'; 
+import Card from './componets/Card';
+import Navbar from './componets/Navbar';
+import Sidebar from './componets/Sidebar';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <main>
       <Head>
@@ -21,4 +21,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomePage
