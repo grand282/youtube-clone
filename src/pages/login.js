@@ -13,7 +13,7 @@ export default function Component() {
         <h1 className="text-2xl font-bold mb-4">YouTube</h1>
         <h2 className="text-lg mb-4">You are not registered, please sign in: </h2>
 
-      <button onClick={() => signIn("google", { callbackUrl: 'http://localhost:3000/home' })} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+      <button onClick={() => signIn("google", { callbackUrl: '/home' })} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
         <p>
         <Image src={googleImg} width={20} height={20} alt="Google Logo" className="mr-2 h-5 w-5" /> <span>Sign in with Google</span>
         </p>
